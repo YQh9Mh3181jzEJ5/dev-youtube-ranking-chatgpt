@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>youtube_trend_summarizer</title>
+  <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body>
+  <div class="tabs">
+    <button class="tablinks" onclick="openTab(event, 'day')">日間</button>
+    <button class="tablinks" onclick="openTab(event, 'week')">週間</button>
+    <button class="tablinks" onclick="openTab(event, 'month')">月間</button>
+    <button class="tablinks" onclick="openTab(event, 'year')">年間</button>
+  </div>
+
+  <div id="day" class="tabcontent">
+    <h2>日間トレンド動画</h2>
+    <div id="day-rankings"></div>
+  </div>
+
+  <div id="week" class="tabcontent">
+    <h2>週間トレンド動画</h2>
+    <div id="week-rankings"></div>
+  </div>
+
+  <div id="month" class="tabcontent">
+    <h2>月間トレンド動画</h2>
+    <div id="month-rankings"></div>
+  </div>
+
+  <div id="year" class="tabcontent">
+    <h2>年間トレンド動画</h2>
+    <div id="year-rankings"></div>
+  </div>
+
+  <script src="static/script.js"></script>
+</body>
+</html>

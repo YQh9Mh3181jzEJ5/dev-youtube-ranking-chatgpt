@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Trend Summarizer in Japan</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='../static/css/style.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- header -->
+    <header>
+      <h1>Youtube Trend Summarizer in Japan</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Top</a></li>
+          <li><a href="{{ url_for('daily') }}">Daily</a></li>
+          <li><a href="#">Weekly</a></li>
+        </ul>
+      </nav>
+      <button class="menu_btn">Menu</button>
+    </header>
+
+    <!-- main -->
+    <main>
+      {% for video, summary in zip(videos, summaries) %}
+      <section>
+        <h2>{{ video['title'] }}</h2>
+        <p>{{ summary }}</p>
+        <iframe
+          width="560"
+          height="315"
+          src="{{ video['url'] }}"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </section>
+      {% endfor %}
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <p>© 2023, YouTube Trend Summarizer in Japan.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='../static/js/script.js') }}"></script>
+  </body>
+</html>
